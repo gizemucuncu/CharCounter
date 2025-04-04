@@ -11,7 +11,9 @@ public class Main {
         Map<Character, Integer> letterCount = new LinkedHashMap<>();
 
         for (char ch : input.toCharArray()) {
-            letterCount.put(ch, letterCount.getOrDefault(ch, 0) + 1);
+            if(Character.isLetter(ch)){
+                letterCount.put(ch, letterCount.getOrDefault(ch, 0) + 1);
+            }
         }
 
         for (Map.Entry<Character, Integer> entry : letterCount.entrySet()) {
